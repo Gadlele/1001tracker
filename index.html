@@ -52,6 +52,18 @@
   .card b::before { content: ""; display: block; width: 32px; height: 5px; border-radius: 3px; background: var(--red); margin-bottom: 16px; }
   .card span { color: var(--muted); font-size: 15px; }
 
+
+  /* ---------- support ---------- */
+  .support { padding-block: 0 96px; }
+  .support .box { background: var(--plum); color: var(--cream); border-radius: 28px; padding: 40px;
+                  display: flex; gap: 28px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .support h2 { font: 800 clamp(26px, 3.6vw, 36px)/1.1 Syne, sans-serif; letter-spacing: -.5px; max-width: 560px; }
+  .support p { opacity: .8; margin-top: 8px; max-width: 560px; }
+  .kofi { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: var(--cream); text-decoration: none;
+          font: 700 17px Syne, sans-serif; padding: 16px 26px; border-radius: 999px; white-space: nowrap; }
+  .kofi:hover { filter: brightness(1.08); }
+  @media (max-width: 600px) { .support .box { padding: 28px 24px; border-radius: 22px; } }
+
   footer { background: var(--plum); color: #cfc4d3; padding-block: 36px 48px; font-size: 13px; }
   footer nav { display: flex; gap: 22px; margin-bottom: 14px; font-size: 14px; color: var(--cream); font-weight: 500; }
   footer p { max-width: 760px; margin: 6px 0; }
@@ -96,6 +108,16 @@
     <div class="card"><b>Your notes</b><span>Thoughts, who you watched it with, your own score. Searchable.</span></div>
     <div class="card"><b>Trakt & Letterboxd</b><span>Sync your Trakt history or import your Letterboxd export.</span></div>
     <div class="card"><b>Director palettes</b><span>Themes inspired by Wes Anderson, Bava, Wong Kar-wai, Kubrick and more.</span></div>
+  </div>
+</section>
+
+<section class="wrap support">
+  <div class="box">
+    <div>
+      <h2>Help me keep the app alive.</h2>
+      <p>If 1001 Tracker keeps you company on your way through the list, consider a small donation on Ko-fi.</p>
+    </div>
+    <a class="kofi" href="https://ko-fi.com/gadlele" target="_blank" rel="noopener">☕ Support on Ko-fi</a>
   </div>
 </section>
 
