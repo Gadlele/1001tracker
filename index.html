@@ -33,7 +33,13 @@
   .badges { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 30px; }
   .badges img { height: 52px; display: block; }
   .badges a.gp img { height: 77px; margin: -12.5px -9px; } /* Google's badge has built-in padding */
-  .free { font: 600 12px Inter, sans-serif; letter-spacing: 2px; margin: 16px 0 64px; opacity: .85; }
+  .free { font: 600 12px Inter, sans-serif; letter-spacing: 2px; margin: 16px 0 22px; opacity: .85; }
+  .soon { list-style: none; padding: 16px 20px; margin: 0 0 64px; max-width: 460px; border-radius: 18px;
+          background: rgba(29, 20, 40, .18); border: 1px solid rgba(245, 234, 217, .35); font-size: 14px; line-height: 1.5; }
+  .soon li { position: relative; padding-left: 22px; }
+  .soon li + li { margin-top: 8px; }
+  .soon li::before { content: "→"; position: absolute; left: 0; }
+  .soon b { font-weight: 600; }
 
   .phones { position: relative; height: 560px; align-self: end; }
   .phone { position: absolute; bottom: -40px; width: 230px; border: 8px solid var(--plum); border-radius: 30px; overflow: hidden;
@@ -70,8 +76,8 @@
 
   @media (max-width: 860px) {
     .poster .wrap { grid-template-columns: 1fr; }
-    .free { margin-bottom: 16px; }
-    .phones { height: 420px; max-width: 420px; width: 100%; justify-self: center; }
+    .soon { margin-bottom: 20px; }
+    .phones { height: 320px; max-width: 420px; width: 100%; justify-self: center; }
     .phone { width: 160px; border-width: 6px; border-radius: 22px; }
     .phone.c { width: 180px; margin-left: -90px; }
     .phone.l { left: 4px; } .phone.r { right: 4px; }
@@ -87,9 +93,15 @@
       <p class="tag">Your checklist for the movies you must see before you die.<br><span>Tick them off, find your next one, keep your notes.</span></p>
       <div class="badges">
         <a href="APP_STORE_URL" aria-label="Download on the App Store"><img src="assets/appstore.svg" alt="Download on the App Store"></a>
+        <!-- Google Play badge, to restore when the Android app is public:
         <a class="gp" href="GOOGLE_PLAY_URL" aria-label="Get it on Google Play"><img src="assets/googleplay.png" alt="Get it on Google Play"></a>
+        -->
       </div>
       <p class="free">NO ACCOUNT · NO ADS</p>
+      <ul class="soon">
+        <li><b>Coming soon to Android</b></li>
+        <li><b>Full Trakt integration coming soon</b> — for now you can sync any public Trakt profile with just a username</li>
+      </ul>
     </div>
     <div class="phones">
       <div class="phone l"><img src="assets/shot_2_detail.jpg" alt="A film page in the app"></div>
@@ -126,7 +138,7 @@
     <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:gabriele.carunchio@gmail.com">Contact</a></nav>
     <p>1001 Tracker is an unofficial fan app, not affiliated with the authors or publishers of "1001 Movies You Must See Before You Die".</p>
     <p>Film data: Wikidata, Wikipedia, 1001 Movies Wiki. This product uses the TMDB API but is not endorsed or certified by TMDB. 1001 Tracker uses Trakt but is not endorsed or certified by Trakt.</p>
-    <p>App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    <p>App Store is a service mark of Apple Inc. Android is a trademark of Google LLC.</p>
   </div>
 </footer>
 </body>
