@@ -43,13 +43,7 @@
   .soon-badge .stamp { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
   .soon-badge .stamp span { transform: rotate(-10deg); border: 3px solid var(--cream); color: var(--cream); background: rgba(224, 40, 63, .85);
                             font: 800 12px Syne, sans-serif; letter-spacing: 2px; padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
-  .free { font: 600 12px Inter, sans-serif; letter-spacing: 2px; margin: 16px 0 22px; opacity: .85; }
-  .soon { list-style: none; padding: 16px 20px; margin: 0 0 64px; max-width: 460px; border-radius: 18px;
-          background: rgba(29, 20, 40, .18); border: 1px solid rgba(245, 234, 217, .35); font-size: 14px; line-height: 1.5; }
-  .soon li { position: relative; padding-left: 22px; }
-  .soon li + li { margin-top: 8px; }
-  .soon li::before { content: "→"; position: absolute; left: 0; }
-  .soon b { font-weight: 600; }
+  .free { font: 600 12px Inter, sans-serif; letter-spacing: 2px; margin: 16px 0 64px; opacity: .85; }
 
   .phones { position: relative; height: 560px; align-self: end; }
   .phone { position: absolute; bottom: -40px; width: 230px; border: 8px solid var(--plum); border-radius: 30px; overflow: hidden;
@@ -87,7 +81,7 @@
 
   @media (max-width: 860px) {
     .poster .wrap { grid-template-columns: 1fr; }
-    .soon { margin-bottom: 20px; }
+    .free { margin-bottom: 20px; }
     .phones { height: 320px; max-width: 420px; width: 100%; justify-self: center; }
     .phone { width: 160px; border-width: 6px; border-radius: 22px; }
     .phone.c { width: 180px; margin-left: -90px; }
@@ -110,9 +104,6 @@
         <span class="gp soon-badge" tabindex="0" aria-describedby="gp-tip" aria-label="Google Play: coming soon"><img src="assets/googleplay.png" alt="Get it on Google Play"><span class="stamp"><span>COMING SOON</span></span><span class="tip" id="gp-tip" role="tooltip">The Android app is in testing: it will be available as soon as the test period ends.</span></span>
       </div>
       <p class="free">NO ACCOUNT · NO ADS</p>
-      <ul class="soon">
-        <li><b>Coming soon to Android</b></li>
-      </ul>
     </div>
     <div class="phones">
       <div class="phone l"><img src="assets/shot_2_detail.jpg" alt="A film page in the app"></div>
