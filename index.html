@@ -23,7 +23,7 @@
 
   /* ---------- poster hero ---------- */
   .poster { background: var(--red); color: var(--cream); position: relative; overflow: hidden; }
-  .poster::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--plum); }
+  .poster::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: var(--plum); }
   .poster .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: end; padding-top: 40px; }
   .brand { display: flex; align-items: center; gap: 12px; font: 700 15px Syne, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
   .brand img { width: 44px; height: 44px; border-radius: 11px; }
@@ -85,6 +85,7 @@
     .free { margin-bottom: 20px; }
     .phones { height: 320px; max-width: 420px; width: 100%; justify-self: center; }
     .phone { width: 160px; border-width: 6px; border-radius: 22px; }
+    .poster::after { height: 6px; }
     .phone.c { width: 180px; margin-left: -90px; }
     .phone.l { left: 4px; } .phone.r { right: 4px; }
   }
