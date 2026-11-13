@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – 1001 Tracker</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --red: #e0283f; --cream: #f5ead9; --plum: #1d1428; --muted: #6b5f6f; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--cream); color: var(--plum); font: 17px/1.7 Inter, system-ui, sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding-inline: 24px; }
+  header { background: var(--red); color: var(--cream); padding-block: 22px; border-bottom: 6px solid var(--plum); }
+  header a { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font: 700 15px Syne, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+  header img { width: 40px; height: 40px; border-radius: 10px; }
+  main { padding-block: 56px 72px; }
+  h1 { font: 800 clamp(34px, 6vw, 52px)/1.05 Syne, sans-serif; letter-spacing: -1px; }
+  .date { color: var(--muted); font-size: 14px; margin: 10px 0 32px; }
+  main p { margin-bottom: 18px; }
+  main b { font-weight: 600; }
+  footer { background: var(--plum); color: #cfc4d3; padding-block: 28px 40px; font-size: 14px; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--cream); font-weight: 500; }
+  .lead { margin: 10px 0 30px; color: var(--muted); }
+  form { display: grid; gap: 18px; }
+  label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+  label span { font-weight: 400; color: var(--muted); font-size: 14px; }
+  input, select, textarea { font: 16px/1.5 Inter, system-ui, sans-serif; color: var(--plum); background: #fff8ee;
+    border: 1px solid #d9c9b0; border-radius: 12px; padding: 12px 14px; width: 100%; }
+  textarea { min-height: 170px; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: 3px solid rgba(224, 40, 63, .25); border-color: var(--red); }
+  .hp { position: absolute; left: -9999px; }
+  button { justify-self: start; font: 600 16px Inter, sans-serif; color: var(--cream); background: var(--red); border: 0;
+    border-radius: 999px; padding: 14px 28px; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: default; }
+  .status { min-height: 1.5em; font-weight: 500; }
+  .status.ok { color: #2e7d32; } .status.err { color: var(--red); }
+  .alt { margin-top: 34px; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="./"><img src="assets/icon.png" alt="">1001 Tracker</a></div></header>
+<main class="wrap">
+    <h1>Contact</h1>
+    <p class="lead">Found a bug, a wrong or missing film, or have an idea for the app? Write here and the message goes straight to the developer.</p>
+    <form id="contact" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="4aa642fc-27d7-451c-85d0-c2e0d5a4b6bf">
+      <input type="hidden" name="subject" value="1001 Tracker – message from the website">
+      <input type="hidden" name="from_name" value="1001tracker.com">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>Your email <span>optional, only if you'd like a reply</span>
+        <input type="email" name="email" autocomplete="email" maxlength="200">
+      </label>
+      <label>Message
+        <textarea name="message" required maxlength="5000" placeholder="A bug, a wrong or missing film, an idea…"></textarea>
+      </label>
+      <button type="submit">Send message</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="alt">Your message is delivered by email through Web3Forms. Nothing else is collected; see the <a href="privacy.html">Privacy Policy</a>.</p>
+</main>
+<footer><div class="wrap"><nav><a href="./">Home</a><a href="changelog.html">What&#x27;s new</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></nav></div></footer>
+<script>
+  const form = document.getElementById('contact');
+  const status = document.getElementById('status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    status.className = 'status';
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || res.status);
+      form.reset();
+      status.className = 'status ok';
+      status.textContent = 'Thank you! Your message has been sent.';
+    } catch (err) {
+      status.className = 'status err';
+      status.textContent = 'Sorry, the message could not be sent. Please try again in a moment.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+<script data-goatcounter="https://1001tracker.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
