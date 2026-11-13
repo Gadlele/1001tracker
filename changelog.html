@@ -30,6 +30,8 @@
   footer { background: var(--plum); color: #cfc4d3; padding-block: 28px 40px; font-size: 14px; }
   footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--cream); font-weight: 500; }
   footer nav a { white-space: nowrap; }
+  /* Syne draws short (old-style) digits by default: '1001' as tall as the capitals */
+  header a, .brand { font-variant-numeric: lining-nums; }
 </style>
 </head>
 <body>

@@ -39,6 +39,8 @@
   .status { min-height: 1.5em; font-weight: 500; }
   .status.ok { color: #2e7d32; } .status.err { color: var(--red); }
   .alt { margin-top: 34px; font-size: 14px; color: var(--muted); }
+  /* Syne draws short (old-style) digits by default: '1001' as tall as the capitals */
+  header a, .brand { font-variant-numeric: lining-nums; }
 </style>
 </head>
 <body>
