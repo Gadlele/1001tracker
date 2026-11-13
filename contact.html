@@ -85,7 +85,7 @@
       status.textContent = 'Thank you! Your message has been sent.';
     } catch (err) {
       status.className = 'status err';
-      status.textContent = 'Sorry, the message could not be sent. Please try again in a moment.';
+      status.innerHTML = 'Sorry, the message could not be sent. Please try again in a moment, or write to <a href="mailto:gabriele.carunchio@gmail.com">gabriele.carunchio@gmail.com</a>.';
     } finally {
       btn.disabled = false;
     }
