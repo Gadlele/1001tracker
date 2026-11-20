@@ -43,7 +43,19 @@
   .soon-badge .stamp { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
   .soon-badge .stamp span { transform: rotate(-10deg); border: 3px solid var(--cream); color: var(--cream); background: rgba(224, 40, 63, .85);
                             font: 800 12px Syne, sans-serif; letter-spacing: 2px; padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
-  .free { font: 600 12px Inter, sans-serif; letter-spacing: 2px; margin: 16px 0 64px; opacity: .85; }
+  .free { font: 600 12px Inter, sans-serif; letter-spacing: 2px; margin: 16px 0 10px; opacity: .85; }
+  .beta { font: 600 14px Inter, sans-serif; margin: 0 0 22px; }
+  .beta a { color: var(--cream); }
+  .soon { padding: 16px 20px; margin: 0 0 64px; max-width: 460px; border-radius: 18px;
+          background: rgba(29, 20, 40, .18); border: 1px solid rgba(245, 234, 217, .35); font-size: 14px; line-height: 1.5; }
+  .soon ul { list-style: none; padding: 0; margin: 0; }
+  .soon-title { font: 800 30px/1 Syne, sans-serif; letter-spacing: -.5px; margin: 4px 0 14px; }
+  .soon li { position: relative; padding-left: 22px; }
+  .soon li + li { margin-top: 8px; }
+  .soon li::before { content: "→"; position: absolute; left: 0; }
+  .soon b { font-weight: 600; }
+  .tip a { color: inherit; text-decoration: underline; }
+  .soon-badge .tip::before { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 22px; } /* lets the pointer reach the link */
   .soon { list-style: none; padding: 16px 20px; margin: 0 0 64px; max-width: 460px; border-radius: 18px;
           background: rgba(29, 20, 40, .18); border: 1px solid rgba(245, 234, 217, .35); font-size: 14px; line-height: 1.5; }
   .soon ul { list-style: none; padding: 0; margin: 0; }
@@ -90,7 +102,7 @@
 
   @media (max-width: 860px) {
     .poster .wrap { grid-template-columns: 1fr; }
-    .free { margin-bottom: 20px; }
+    .soon { margin-bottom: 20px; }
     .phones { height: 320px; max-width: 420px; width: 100%; justify-self: center; }
     .phone { width: 160px; border-width: 6px; border-radius: 22px; }
     .poster::after { height: 6px; }
@@ -109,12 +121,22 @@
       <h1 class="big" aria-label="1001 Tracker">1001</h1>
       <p class="tag">Your checklist for the movies you must see before you die.<br><span>Tick them off, find your next one, keep your notes.</span></p>
       <div class="badges">
-        <a class="gp" href="https://play.google.com/store/apps/details?id=dev.gadlele.tracker1001" aria-label="Get it on Google Play"><img src="assets/googleplay.png" alt="Get it on Google Play"></a>
+        <span class="gp soon-badge" tabindex="0" aria-describedby="gp-tip" aria-label="Google Play: in beta testing"><img src="assets/googleplay.png" alt="Get it on Google Play"><span class="tip" id="gp-tip" role="tooltip">The app is in beta testing right now. Want to be a tester? <a href="contact.html">Write to me</a> to get the link.</span></span>
         <!-- App Store: "coming soon" until Apple approves the app. When it is live, replace this <span> with:
              <a href="https://apps.apple.com/app/id6830646151" aria-label="Download on the App Store"><img src="assets/appstore.svg" alt="Download on the App Store"></a> -->
-        <span class="soon-badge" tabindex="0" aria-describedby="as-tip" aria-label="App Store: in review, available soon"><img src="assets/appstore.svg" alt="Download on the App Store"><span class="tip" id="as-tip" role="tooltip">The iPhone app is in review and will be available soon.</span></span>
+        <span class="soon-badge" tabindex="0" aria-describedby="as-tip" aria-label="App Store: in beta testing, published in a few days"><img src="assets/appstore.svg" alt="Download on the App Store"><span class="tip" id="as-tip" role="tooltip">The app is in beta testing: it will be published in a few days.</span></span>
       </div>
       <p class="free">NO ACCOUNT · NO ADS</p>
+      <p class="beta">Now in beta testing · <a href="contact.html">Join the Android beta</a></p>
+      <div class="soon">
+      <h2 class="soon-title">New in the beta</h2>
+      <ul>
+        <li><b>Two-way Trakt sync</b>: your watched films and watchlist, always in step</li>
+        <li><b>Three lists to choose from</b>: the first edition (2003), the new 2026 edition, or every film from every edition</li>
+        <li><b>Film titles in your language</b>: Italian, French, German, Spanish, Japanese and more</li>
+        <li><b>Excel export</b>: your list as a spreadsheet to open and share</li>
+      </ul>
+      </div>
     </div>
     <div class="phones">
       <div class="phone l"><img src="assets/shot_2_detail.jpg" alt="A film page in the app"></div>
