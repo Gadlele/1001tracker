@@ -45,6 +45,7 @@
                             font: 800 12px Syne, sans-serif; letter-spacing: 2px; padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
   .free { font: 600 12px Inter, sans-serif; letter-spacing: 2px; margin: 16px 0 10px; opacity: .85; }
   .beta { font: 600 14px Inter, sans-serif; margin: 0 0 22px; }
+  .free + .soon { margin-top: 22px; }
   .beta a { color: var(--cream); }
   .soon { padding: 16px 20px; margin: 0 0 64px; max-width: 460px; border-radius: 18px;
           background: rgba(29, 20, 40, .18); border: 1px solid rgba(245, 234, 217, .35); font-size: 14px; line-height: 1.5; }
@@ -121,13 +122,12 @@
       <h1 class="big" aria-label="1001 Tracker">1001</h1>
       <p class="tag">Your checklist for the movies you must see before you die.<br><span>Tick them off, find your next one, keep your notes.</span></p>
       <div class="badges">
-        <span class="gp soon-badge" tabindex="0" aria-describedby="gp-tip" aria-label="Google Play: in beta testing"><img src="assets/googleplay.png" alt="Get it on Google Play"><span class="tip" id="gp-tip" role="tooltip">The app is in beta testing right now: coming soon to Google Play.</span></span>
         <!-- App Store: plain badge until Apple approves the app. When it is live, replace this <span> with:
              <a href="https://apps.apple.com/app/id6830646151" aria-label="Download on the App Store"><img src="assets/appstore.svg" alt="Download on the App Store"></a> -->
         <span><img src="assets/appstore.svg" alt="Download on the App Store"></span>
+        <span class="gp soon-badge" tabindex="0" aria-describedby="gp-tip" aria-label="Google Play: in beta testing"><img src="assets/googleplay.png" alt="Get it on Google Play"><span class="tip" id="gp-tip" role="tooltip">The app is in beta testing right now: coming soon to Google Play.</span></span>
       </div>
       <p class="free">NO ACCOUNT · NO ADS</p>
-      <p class="beta">Now in beta testing</p>
       <div class="soon">
       <h2 class="soon-title">Coming in the next update</h2>
       <ul>
